@@ -8,8 +8,20 @@ class Player {
         xp = playerJson['xp'],
         team = playerJson['team'];
 
-  void sayHello() {
-    print("Hi my name is $name");
+  void hello() {
+    print('$name : $xp : $team\n');
+  }
+}
+
+class Player2 {
+  String name; // _name 은 private 변수
+  int xp;
+  String team;
+
+  Player2({required this.name, required this.xp, required this.team});
+
+  void hello() {
+    print('$name : $xp : $team\n');
   }
 }
 
@@ -22,6 +34,15 @@ void main() {
 
   apiData.forEach((playerJson) {
     var player = Player.fromJson(playerJson);
-    player.sayHello();
+    player.hello();
   });
+
+  var Heesu = Player2(name: 'Heesu', xp: 2000, team: 'red');
+  var potat = Heesu
+    ..name = 'Song'
+    ..xp = 3000
+    ..team = 'blue';
+
+  Heesu.hello();
+  potat.hello();
 }
