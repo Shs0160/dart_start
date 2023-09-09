@@ -1,3 +1,5 @@
+enum Team { red, blue }
+
 class Player {
   final String name; // _name 은 private 변수
   int xp;
@@ -16,7 +18,7 @@ class Player {
 class Player2 {
   String name; // _name 은 private 변수
   int xp;
-  String team;
+  Team team;
 
   Player2({required this.name, required this.xp, required this.team});
 
@@ -37,11 +39,11 @@ void main() {
     player.hello();
   });
 
-  var Heesu = Player2(name: 'Heesu', xp: 2000, team: 'red');
+  var Heesu = Player2(name: 'Heesu', xp: 2000, team: Team.red);
   var potat = Heesu
     ..name = 'Song'
     ..xp = 3000
-    ..team = 'blue';
+    ..team = Team.blue;
 
   Heesu.hello();
   potat.hello();
