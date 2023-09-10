@@ -1,6 +1,11 @@
+//추상화 클래스 - 특정 메소드를 구현하도록 강제
+abstract class Human {
+  void walk();
+}
+
 enum Team { red, blue }
 
-class Player {
+class Player extends Human {
   final String name; // _name 은 private 변수
   int xp;
   String team;
@@ -12,6 +17,10 @@ class Player {
 
   void hello() {
     print('$name : $xp : $team\n');
+  }
+
+  void walk() {
+    print('im walking');
   }
 }
 
