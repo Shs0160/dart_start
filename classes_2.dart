@@ -10,6 +10,9 @@ class Player extends Human {
   int xp;
   String team;
 
+  //var = 한번 타입을 정하면 계속 바꿀 수 있음
+  //dynamic = 타입을 계속 바꿀 수 있음
+
   Player.fromJson(Map<String, dynamic> playerJson)
       : name = playerJson['name'],
         xp = playerJson['xp'],
